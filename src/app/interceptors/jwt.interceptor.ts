@@ -25,6 +25,4 @@ export const JwtInterceptor: HttpInterceptorFn = (req: HttpRequest<any>, next: H
         });
         return next(handledReq);
     }
-
-    return next(req);
 };
