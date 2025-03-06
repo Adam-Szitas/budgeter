@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { UrlService } from '../../../services/url.service';
 import { MatButtonModule } from '@angular/material/button';
+import { NavbarComponent } from '../../navbar/navbar.component';
 
 @Component({
     selector: 'app-home',
@@ -8,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
     styleUrls: ['./home.component.scss'],
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [MatButtonModule],
+    imports: [MatButtonModule, NavbarComponent],
 })
 export class HomeComponent {
     constructor(private urlService: UrlService) {}

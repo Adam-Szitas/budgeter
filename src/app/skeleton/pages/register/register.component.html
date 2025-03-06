@@ -1,6 +1,6 @@
 <div class="form">
     <mat-card>
-        <mat-card-title>Login</mat-card-title>
+        <mat-card-title>Register</mat-card-title>
         <form [formGroup]="formGroup" (ngSubmit)="onRegister()">
             <mat-card-content>
                 <mat-form-field appearance="outline">
@@ -8,10 +8,10 @@
                     <input [formGroup]="formGroup" formControlName="name" matInput placeholder="Enter your name" />
                 </mat-form-field>
 
-                <mat-form-field appearance="outline">
+                <!-- <mat-form-field appearance="outline">
                     <mat-label>E-mail</mat-label>
                     <input [formGroup]="formGroup" formControlName="mail" matInput placeholder="Enter your e-mail" />
-                </mat-form-field>
+                </mat-form-field> -->
 
                 <mat-form-field appearance="outline">
                     <mat-label>Password</mat-label>

@@ -11,8 +11,16 @@ export const JwtInterceptor: HttpInterceptorFn = (req: HttpRequest<any>, next: H
         const handledReq = req.clone({
             setHeaders: {
                 Authorization: `Bearer ${token}`,
-                'Content-Type': 'application/json, text/plain, */*',
-                Accept: 'application/json, text/plain, */*',
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+            },
+        });
+        return next(handledReq);
+    } else {
+        const handledReq = req.clone({
+            setHeaders: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
             },
         });
         return next(handledReq);
