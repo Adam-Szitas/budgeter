@@ -84,7 +84,7 @@
                         "polyfills": ["zone.js", "zone.js/testing"],
                         "tsConfig": "tsconfig.spec.json",
                         "inlineStyleLanguage": "scss",
-                        "baseHref": "/",
+                        "baseHref": "https://adam-szitas.github.io/budgeter/global/browser/",
                         "assets": [
                             {
                                 "glob": "**/*",
