@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { tap } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 import { JwtService } from './jwt.service';
 
 import { Environment } from '../environment/environment';
@@ -41,8 +41,9 @@ export class AuthService {
         );
     }
 
-    public logout(): void {
+    public logout(): Observable<boolean> {
         this.jwtService.clearToken();
+        return of(true);
     }
 
     public isLoggedIn(): boolean {

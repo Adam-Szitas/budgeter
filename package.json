@@ -9,7 +9,7 @@
         "test": "ng test",
         "serve:ssr:Budgeter": "node dist/budgeter/server/server.mjs",
         "lint": "ng lint",
-        "npm build": "ng build --configuration production"
+        "build-prod": "ng build --configuration production --base-href https://adam-szitas.github.io/budgeter/global/browser/"
     },
     "private": true,
     "dependencies": {
