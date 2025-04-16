@@ -10,11 +10,10 @@ import { MatCardModule } from '@angular/material/card';
 
 @Component({
     selector: 'app-login',
-    standalone: true,
     imports: [CommonModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatCardModule, RouterModule],
     styleUrls: ['./login.component.scss'],
     templateUrl: './login.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit {
     public formGroup!: FormGroup;
