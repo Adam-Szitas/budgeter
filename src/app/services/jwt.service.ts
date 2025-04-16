@@ -1,28 +1,39 @@
-import { Injectable } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root',
 })
 export class JwtService {
-  private tokenKey = 'authToken'; // Storage key for JWT
+    private tokenKey = 'authToken'; // Storage key for JWT
 
-  // 🔹 Save token in LocalStorage
-  saveToken(tokenData: { token: string, tokenType: string }): void {
-    localStorage.setItem(this.tokenKey, tokenData.token);
-  }
+    constructor(
+        @Inject(PLATFORM_ID) private platformId: Object,
+        private router: Router,
+    ) {}
 
-  // 🔹 Retrieve the token
-  getToken(): string | null {
-    return localStorage.getItem(this.tokenKey);
-  }
+    // 🔹 Save token in LocalStorage
+    saveToken(tokenData: { token: string; tokenType: string }): void {
+        localStorage.setItem(this.tokenKey, tokenData.token);
+    }
 
-  // 🔹 Remove token (Logout)
-  clearToken(): void {
-    localStorage.removeItem(this.tokenKey);
-  }
+    // 🔹 Retrieve the token
+    getToken(): string | false | null {
+        return localStorage.getItem(this.tokenKey);
+    }
 
-  // 🔹 Check if user is authenticated
-  isAuthenticated(): boolean {
-    return !!this.getToken();
-  }
+    // 🔹 Remove token (Logout)
+    clearToken(): void {
+        localStorage.removeItem(this.tokenKey);
+    }
+
+    // 🔹 Check if user is authenticated
+    isAuthenticated(): boolean {
+        if (isPlatformBrowser(this.platformId) && this.getToken()) {
+            return true;
+        }
+        this.router.navigate(['']);
+        return false;
+    }
 }

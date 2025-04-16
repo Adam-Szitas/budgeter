@@ -15,6 +15,7 @@ export class AuthService {
     private apiUrl = Environment.core;
 
     public login(credentials: Credentials) {
+        this.jwtService.clearToken();
         const body = JSON.stringify({ name: credentials.name, password: credentials.password });
 
         return this.http.post<LoginResponse>(`${this.apiUrl}auth/login`, body).pipe(
