@@ -8,7 +8,8 @@ import { NavbarComponent } from '../../navbar/navbar.component';
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [MatButtonModule, NavbarComponent]
+    imports: [MatButtonModule, NavbarComponent],
+    standalone: true,
 })
 export class HomeComponent {
     constructor(private urlService: UrlService) {}

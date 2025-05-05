@@ -1,4 +1,4 @@
-<!doctype html>
+export default `<!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8"/>
@@ -12,3 +12,4 @@
         <app-root></app-root>
     <link rel="modulepreload" href="chunk-L4TRQONP.js"><link rel="modulepreload" href="chunk-M7KM7E6R.js"><script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-7LKIOHZ7.js" type="module"></script></body>
 </html>
+`;

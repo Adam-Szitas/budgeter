@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 
-import { LoginComponent } from './skeleton/login/login.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-root',
-    imports: [LoginComponent, RouterModule],
+    imports: [RouterModule],
     templateUrl: './app.component.html',
-    styleUrl: './app.component.scss'
+    styleUrl: './app.component.scss',
+    standalone: true,
 })
 export class AppComponent {
-  title = 'Budgeter';
+    title = 'Budgeter';
 }
